@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from keep_alive import keep_alive
 
 GUILD_ID = 881250112549027880  
 
@@ -66,4 +67,7 @@ async def help(interaction: discord.Interaction):
     embed.add_field(name="/test [arg1] [arg2]", value="Returns your input to test argument parsing.", inline=False)
     embed.add_field(name="/help", value="Display this help message.", inline=False)
     await interaction.response.send_message(embed=embed)
+
+keep_alive()
+
 bot.run(os.environ.get("DISCORD_BOT_SECRET"))
