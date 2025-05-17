@@ -14,7 +14,8 @@ tree = bot.tree
 async def on_ready():
     print(f"Logged in as {bot.user}")
     guild = discord.Object(id=GUILD_ID)
-    await tree.sync(guild=guild)
+    await tree.sync()
+    print("Synced global slash commands")
     print(f"Synced slash commands to guild {GUILD_ID}")
 
     activity = discord.Game(name="Made by Me88_88")
